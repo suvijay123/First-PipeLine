@@ -3,6 +3,14 @@ pipeline {
 
     stages {
 
+        
+         stage('Validate Application') {
+             steps {
+        	sh 'test -f index.html'
+        	echo 'Application validation successful!'
+   			 }
+		       	}
+
         stage('Checkout') {
             steps {
                 checkout scm
